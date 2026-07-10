@@ -1,0 +1,30 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        retval = 0
+        exnums = []
+        nums.sort()
+        i = 0
+        for n in nums:
+            if n == val:
+                break
+            else:
+                i+=1
+                retval += 1
+        print(i)
+        for j in range(i, len(nums)):
+            if i == len(nums)-1:
+                break 
+            if nums[j] > val:
+                nums[i] = nums[j]
+                i += 1
+                retval += 1
+                
+            # if n == val:
+            #     retval += 1
+            # else:
+            #     exnums.append(n)
+        # nums = exnums
+        # for j in range(i, len(nums)):
+
+        print(nums)
+        return retval
